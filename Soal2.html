@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Diri </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            width: 200px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Masukan Data Diri </h1>
+
+    <form onsubmit="return onSubmitHandler()">
+        <label>
+            Nama:
+            <input type="text" id="NamaInput">
+        </label>
+        <label>
+            Usia:
+            <input type="text" id="UsiaInput">
+        </label>
+        <label>
+            Alamat:
+            <input type="text" id="AlamatInput">
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="dataDiri" onload="onLoadHandler()" ondblclick="onDoubleClickHandler()" onmouseover="onMouseOverHandler()" onmouseout="onMouseOutHandler()">
+        <h2>Data Diri:</h2>
+        <p id="Nama"></p>
+        <p id="Usia"></p>
+        <p id="Alamat"></p> 
+    </div>
+
+    <script>
+        function onSubmitHandler() {
+            var namaInput = document.getElementById('namaInput');
+            var umurInput = document.getElementById('umurInput');
+            var Nama = document.getElementById('Nama');
+            var Usia = document.getElementById('Usia');
+            var Alamat = document.getElementById('Alamat');
+
+            Nama.textContent = 'Nama: ' + NamaInput.value;
+            Usia.textContent = 'Usia: ' + UsiaInput.value;
+            Alamat.textContent ='Alamat: ' + AlamatInput.value;
+
+            NamaInput.value = '';
+            UsiaInput.value = '';
+            AlamatInput.value ='';
+
+            return false; // Prevent form submission
+        }
+
+        function onLoadHandler() {
+            console.log('Page loaded!');
+        }
+
+        function onDoubleClickHandler() {
+            console.log('Data Diri double-clicked!');
+        }
+
+        function onMouseOverHandler() {
+            console.log('Mouse over Data Diri!');
+        }
+
+        function onMouseOutHandler() {
+            console.log('Mouse out of Data Diri!');
+        }
+    </script>
+</body>
+</html>

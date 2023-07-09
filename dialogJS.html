@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dialog Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contoh Dialog</h1>
+
+    <button onclick="showAlert()">Alert Dialog</button>
+    <button onclick="showPrompt()">Prompt Dialog</button>
+    <button onclick="showConfirm()">Confirm Dialog</button>
+
+    <script>
+        function showAlert() {
+            alert("Awas Meledak!");
+        }
+
+        function showPrompt() {
+            var result = prompt("Masukan nama anda:");
+
+            if (result !== null) {
+                alert("Hello, " + result + " !Selamat menjalani hari mu yang menyenangkan");
+            } else {
+                alert("You canceled the prompt dialog.");
+            }
+        }
+
+        function showConfirm() {
+            var result = confirm("Yakin ingin keluar dari website?");
+
+            if (result) {
+                alert("Anda telah Keluar.");
+            } else {
+                alert("Anda tidak jadi Keluar.");
+            }
+        }
+    </script>
+</body>
+</html>
